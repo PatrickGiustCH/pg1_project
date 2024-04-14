@@ -38,4 +38,9 @@ def generate_launch_description():
             description='Use sim time if true'),
 
         node_robot_state_publisher
+
     ])
+
+    #also start rviz:  rviz2 -d src/pg1_project/config/rviz_basic_view.rviz 
+    #also start joint state publisher gui: ros2 run joint_state_publisher_gui joint_state_publisher_gui
+
