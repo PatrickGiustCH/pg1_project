@@ -12,7 +12,7 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="0 0 0.0023" rpy="0 0 ${pi}"/>
+        <origin xyz="0 0 0.0023" rpy="0 0 0"/>
     </joint> 
 
 
@@ -57,7 +57,7 @@
         </visual>
         <collision>
             <geometry>
-                <cylinder radius="0.08" length="0.04"/>
+                <sphere radius="0.08"/>
             </geometry>
         </collision>
         <xacro:inertial_cylinder mass="3" radius="0.08" length="0.04">
@@ -86,7 +86,7 @@
         </visual>
         <collision>
             <geometry>
-                <cylinder radius="0.08" length="0.04"/>
+                <sphere radius="0.08" />
             </geometry>
         </collision>
         <xacro:inertial_cylinder mass="3" radius="0.08" length="0.04">
@@ -102,7 +102,7 @@
     <joint name="caster_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="caster_wheel"/>
-        <origin xyz="0.31 0 -0.055" />
+        <origin xyz="-0.31 0 -0.055" />
     </joint> 
 
     <link name="caster_wheel">
