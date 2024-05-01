@@ -40,12 +40,12 @@
     </hardware>
 
     <sensor name="odrv0">
-        <param name="serial_number">123</param>
+        <param name="serial_number">3570306d3133</param>
     </sensor>
 
   
         <joint name="right_wheel_joint">
-            <param name="serial_number">123</param>
+            <param name="serial_number">3570306d3133</param>
             <param name="axis">0</param>
             <param name="enable_watchdog">1</param>
             <param name="watchdog_timeout">0.1</param>
@@ -54,7 +54,7 @@
 
 
         <joint name="left_wheel_joint">
-            <param name="serial_number">123</param>
+            <param name="serial_number">3570306d3133</param>
             <param name="axis">1</param>
             <param name="enable_watchdog">1</param>
             <param name="watchdog_timeout">0.1</param>
