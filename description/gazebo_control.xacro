@@ -7,7 +7,7 @@
             <left_joint>left_wheel_joint</left_joint>
             <right_joint>right_wheel_joint</right_joint>
             <wheel_separation>0.4</wheel_separation>
-            <wheel_diameter>0.16</wheel_diameter>
+            <wheel_diameter>0.17</wheel_diameter>
 
 
             <!-- limits -->
