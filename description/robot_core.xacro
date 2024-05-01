@@ -9,6 +9,15 @@
         <origin xyz="0 0 0.01"/>
     </link>
 
+     <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+    </joint> 
+
+    <link name="base_footprint">
+    </link>  
+
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
@@ -24,12 +33,12 @@
             </geometry>
             <material name="red"/>
         </visual>
-        <collision>
+        <!-- <collision>
             <origin xyz="-0.16 0 0.12"/>
             <geometry>
                 <box size="0.5 0.4 0.3"/>
             </geometry>
-        </collision>
+        </collision> -->
         <xacro:inertial_box mass="4" x="0.5" y="0.4" z="0.3">
             <origin xyz="-0.16 0 0.12" rpy="0 0 0"/>
         </xacro:inertial_box>
