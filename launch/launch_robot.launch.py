@@ -21,6 +21,18 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
+    lidar = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','rplidar.launch.py'
+                )])
+    )
+
+    camera = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','camera.launch.py'
+                )])
+    )
+
 
     robot_controllers = PathJoinSubstitution(
         [
@@ -30,6 +42,19 @@ def generate_launch_description():
         ]
     )
 
+    # joystick = IncludeLaunchDescription(
+    #             PythonLaunchDescriptionSource([os.path.join(
+    #                 get_package_share_directory(package_name),'launch','joystick.launch.py'
+    #             )]), launch_arguments={'use_sim_time': 'true'}.items()
+    # )
+
+    twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params],
+            remappings=[('/cmd_vel_out','/diffbot_base_controller/cmd_vel_unstamped')]
+        )
 
 
 
@@ -69,6 +94,8 @@ def generate_launch_description():
     return LaunchDescription([
         rsp,
         twist_mux,
+        lidar,
+        camera,
         delayed
 
     ])
