@@ -27,9 +27,9 @@
 
     <link name="chassis">
         <visual>
-            <origin xyz="-0.16 0 0.12"/>
+            <origin xyz="-0.13 0 0.09"/>
             <geometry>
-                <box size="0.5 0.4 0.3"/>
+                <box size="0.42 0.36 0.2"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -111,13 +111,13 @@
     <joint name="caster_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="caster_wheel"/>
-        <origin xyz="-0.31 0 -0.055" />
+        <origin xyz="-0.28 0 -0.045" />
     </joint> 
 
     <link name="caster_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.04" length="0.07"/>
+                <cylinder radius="0.04" length="0.09"/>
             </geometry>
             <material name="gray"/>
         </visual>
