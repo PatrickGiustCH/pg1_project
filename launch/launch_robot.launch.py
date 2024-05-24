@@ -57,15 +57,6 @@ def generate_launch_description():
         )
 
 
-
-    # twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
-    # twist_mux = Node(
-    #         package="twist_mux",
-    #         executable="twist_mux",
-    #         parameters=[twist_mux_params],
-    #         remappings=[('/cmd_vel_out','/diffbot_base_controller/cmd_vel_unstamped')]
-    #     )
-
      
 
     control_node = Node(
@@ -93,7 +84,7 @@ def generate_launch_description():
     
     return LaunchDescription([
         rsp,
-        # twist_mux,
+        twist_mux,
         lidar,
         camera,
         delayed
