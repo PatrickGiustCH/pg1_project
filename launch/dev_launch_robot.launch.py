@@ -49,14 +49,24 @@ def generate_launch_description():
             remappings=[('/cmd_vel_out','/diffbot_base_controller/cmd_vel_unstamped')]
         )
 
-    image_transport_node = Node(
+    image_transport_node_front = Node(
         package='image_transport',
         executable='republish',
         name='image_republisher',
         arguments=['compressed', 'raw'],
         remappings=[
-            ('in/compressed', '/camera/image_raw/compressed'),
-            ('out', '/camera/image_raw/uncompressed')
+            ('in/compressed', '/camera_front/image_raw/compressed'),
+            ('out', '/camera_front/image_raw/uncompressed')
+        ]
+    )
+    image_transport_node_back = Node(
+        package='image_transport',
+        executable='republish',
+        name='image_republisher',
+        arguments=['compressed', 'raw'],
+        remappings=[
+            ('in/compressed', '/camera_back/image_raw/compressed'),
+            ('out', '/camera_back/image_raw/uncompressed')
         ]
     )
 
@@ -74,6 +84,7 @@ def generate_launch_description():
         joystick,
         navigation,
         twist_mux,
-        image_transport_node,
+        image_transport_node_front,
+        image_transport_node_back,
         delayed
     ])
