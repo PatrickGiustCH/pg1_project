@@ -4,21 +4,21 @@ detect_ball:
     x_min: 0
     x_max: 100
     y_min: 0
-    y_max: 0
-    h_min: 100
-    h_max: 105
-    s_min: 159
+    y_max: 100
+    h_min: 26
+    h_max: 31
+    s_min: 0
     s_max: 255
-    v_min: 80
-    v_max: 251
-    sz_min: 2
+    v_min: 0
+    v_max: 255
+    sz_min: 0
     sz_max: 100
 
 detect_ball_3d:
   ros__parameters:
     h_fov: 1.089
-    ball_radius: 0.033
-    camera_frame: "camera_link_optical"
+    ball_radius: 0.011
+    camera_frame: "camera_back_link_optical"
 
 follow_ball:
   ros__parameters:

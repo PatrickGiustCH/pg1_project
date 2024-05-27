@@ -123,7 +123,7 @@
         </visual>
         <collision>
             <geometry>
-                <cylinder radius="0.04" length="0.05"/>
+                <cylinder radius="0.04" length="0.08"/>
             </geometry>
         </collision>
         <xacro:inertial_sphere mass="0.1" radius="0.05">

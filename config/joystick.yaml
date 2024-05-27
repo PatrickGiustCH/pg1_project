@@ -7,19 +7,21 @@ joy_node:
 teleop_node:
   ros__parameters:
     axis_linear:
-      x: 1
+      x: 5  # Right trigger for forward
+      reverse_x: 2  # Left trigger for backward
     scale_linear:
       x: 0.5
+      reverse_x: -0.5  # Negative scale for backward
     scale_linear_turbo:
       x: 1.0
+      reverse_x: -1.0  # Negative scale for backward in turbo
 
     axis_angular:
       yaw: 0
     scale_angular:
-      yaw: 0.5
+      yaw: 1
     scale_angular_turbo:
-      yaw: 1.0
-
+      yaw: 10
 
     enable_button: 4
     enable_turbo_button: 5
